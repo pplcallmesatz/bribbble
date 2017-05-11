@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<title>Minimum Bootstrap HTML Skeleton</title>
+
+	<!--  -->
+
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+
+	<button>
+submit
+</button>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script>
+        
+        $(document).ready(function(){
+             var getURI = "https://dribbble.com/oauth/authorize",
+                redirectURI= "https://swasatz.github.io/bribbble/",
+                clientID = "c832b7ee8dfbc0f6ecff91e2179ec3f9524870ce6f16c0ed72f23ffa6e3541ee",
+                clientSecret = "d4a8b8e084c9532b617af7da3c30cede765cc9b62eb93778545c35e718e5ae9a",
+                clientAccessToken = "9c34f542e59aeaf67b2f2f4572b1e987db52235d5be130a8a56f15f3477a6996";
+            
+            
+             $("button").click(function(){
+            console.log("clicked");
+                    $.ajax({
+                url: getURI,
+                type: 'GET',
+                data: {
+                    'client_id' : clientID,
+                    'redirect_uri' : redirectURI,
+                    'scope' : "comment",
+                },
+                'success' : function(url) {
+                    location.href = this.url;
+                }
+                
+            });
+                 
+             });
+        });
+	</script>
+
+</body>
+
+</html>
